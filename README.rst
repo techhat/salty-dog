@@ -5,7 +5,7 @@ renderer, runner and returner for managing salt nodes.
 Requirements
 ============
 
-The only two requirements to run this are salt (http://saltstack.org)
+The only two requirements to run this are Salt (http://saltstack.org)
 and Flask (http://flask.pocoo.org).
 
 Running
