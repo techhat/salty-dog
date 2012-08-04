@@ -1,54 +1,69 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Salt Web</title>
-<link rel="stylesheet" href="/static/css/main.css" type="text/css" />
-<script type="text/javascript" src="/static/js/jquery.js"></script>   
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    {% block head %}
+        <title>Salt Web</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" type="text/css" />
+        <script type="text/javascript" src="{{ url_for('static', filename='jquery.js') }}"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    {% endblock head %}
 </head>
 <body>
 <div id="container">
-<!-- Header Start-->
+    <!-- Header Start-->
+    {% block header %}
   <div id="header">
     <div id="headtop">&nbsp;</div>
     <div id="headbottom">
       <h1>&nbsp;</h1>
-      <h2>Manage your infrastructure with Salt.</h2>
+      <h2>{% block title %}Manage your infrastructure with Salt.{% endblock title %}</h2>
     </div>
   </div>
-<!-- Header End and Menu Start-->  
+    {% endblock header %}
+    <!-- Header End -->
   <div id="menu">
+    <!-- Menu Start -->
+    {% block menu %}
     <ul>
-      <li class="current"><a href="#">Home</a></li>
-      <li><a href="#">Nodes</a></li>
-      <li><a href="#">Status</a></li>
-      <li><a href="#">States</a></li>
+      <li {% if response.menuitem == 'home' %}class="current"{% endif %}><a href="#">Home</a></li>
+      <li {% if response.menuitem == 'nodes' %}class="current"{% endif %}><a href="#">Nodes</a></li>
+      <li {% if response.menuitem == 'status' %}class="current"{% endif %}><a href="#">Status</a></li>
+      <li {% if response.menuitem == 'states' %}class="current"{% endif %}><a href="#">States</a></li>
     </ul>
-<!-- Menu End and Content Start-->
+    {% endblock menu %}
+    <!-- Menu End -->
   </div>
   <div id="content">
   <!-- Left content Start-->
     <div id="leftcontent">
     <!-- Navigation Start-->
+      {% block active_nodes %}
       <div class="navigation">
-        <div class="navhead">Nodes</div>
+        <div class="navhead">Active Nodes</div>
         <ul class="navmenu">
-          <li><a href="#">Node 1</a></li>
-          <li><a href="#">Node 2</a></li>
-          <li><a href="#">Node 3</a></li>
-          <li><a href="#">Node 4</a></li>
-          <li><a href="#">Node 5</a></li>
-          <li><a href="#">Node 6</a></li>
-          <li><a href="#">Node 7</a></li>
+          {% for node in response.active_nodes %}
+            <li><a href="#">{{ node }}</a></li>
+          {%- endfor %}
         </ul>
       </div>
-      <!-- Navigation ends and Other navigation for login form-->
-     <!-- Navigation ends and Other navigation for some stuff-->
+      {% endblock active_nodes %}
+      {% block inactive_nodes %}
+      <div class="navigation">
+        <div class="navhead">Inactive Nodes</div>
+          <ul class="navmenu">
+            {% for node in response.inactive_nodes %}
+              <li><a href="#">{{ node }}</a></li>
+            {%- endfor %}
+          </ul>
+        {% endblock inactive_nodes %}
+      </div>
+    <!-- Navigation end -->
     </div>
-    <!-- Left content ends and right content starts-->
+    <!-- Left content end -->
     <div id="rightcontent">
     <!-- Post starts here-->
       <h1 class="posthead">Salt Web</h1>
+    {% block content %}
       <div class="postcontent"> 
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dui magna, blandit non auctor sit amet, varius et tellus. Sed sed ante est, vel fermentum arcu. In lobortis convallis purus, at euismod leo lobortis vitae. Phasellus venenatis commodo dapibus. Suspendisse a pharetra eros. Curabitur nunc tortor, accumsan eu iaculis sed, tempor et turpis. Sed vehicula eleifend libero sit amet facilisis. Vestibulum diam risus, ultrices a elementum sed, rhoncus nec sapien. Ut non ligula purus. Phasellus vulputate leo in nisi vehicula auctor.
@@ -60,18 +75,22 @@
 Proin eget lacinia quam. Etiam venenatis sodales arcu. Cras vel dui orci, a pulvinar odio. Nunc tristique ullamcorper fringilla. Integer adipiscing mollis feugiat. Vestibulum turpis tortor, tristique id dapibus at, eleifend id est. Vestibulum congue mi non est tincidunt aliquet.
       </p>
       <div class="postfooter">&nbsp;</div>
-      <!-- Post Ends here and another post started-->   
+      <!-- Post End -->   
            
     </div>
-    <!-- Right content Ends here-->
+    <!-- Right content End -->
   </div>
-  <!-- Content Ends here and footer started-->
+  {% endblock content %}
+  <!-- Content End -->
   <div class="footclear">&nbsp;</div>
+  <!-- footer Start -->
+  {% block footer %}
   <div id="footer">
     <h2>&copy; 2012 <a href="http://saltstack.com/">SaltStack</a> | Design by <a href="http://www.flopsoft.co.nr" target="_blank">FlopSoft Inc.</a></h2>
   </div>
-  <!-- footer Ends here-->
+  {% endblock footer %}
+  <!-- Footer End -->
 </div>
-<!-- Container Ends here-->
+<!-- Container End -->
 </body>
 </html>
