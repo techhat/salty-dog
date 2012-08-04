@@ -1,7 +1,7 @@
 *{margin:0; padding:0; border: 0;}
 body {
 	font: 70%/1.5em Verdana, Tahoma, arial, sans-serif;
-	background: Black url('/images/bodybg.jpg') repeat;
+	background: Black url('/static/images/bodybg.jpg') repeat;
 	margin-bottom: 10px;
 	color: Silver;
 }
@@ -142,7 +142,7 @@ blockquote {
 #headbottom{
 	margin: 0 auto;
 	height: 135px;
-	background: url('/images/titlebar.png') no-repeat;
+	background: url('/static/images/titlebar.png') no-repeat;
 	border: 2px solid #272727;
 	padding: 10px 0 0 25px;
 }
@@ -150,7 +150,7 @@ blockquote {
  	padding: 20px 0 0 50px;
 	font: bolder 3.1em 'Trebuchet MS', Arial, Sans-serif;
 	text-transform: uppercase;
-	background: url('/images/salt-logo-40.png') no-repeat left;
+	background: url('/static/images/salt-logo-40.png') no-repeat left;
 	color: Black;
 }
 #headbottom h2{
@@ -227,7 +227,7 @@ blockquote {
 	background: #313131;
 }
 .navhead{
-	background: #313131 url('/images/navhround.jpg') no-repeat top left;
+	background: #313131 url('/static/images/navhround.jpg') no-repeat top left;
 	height: 23px;
 	padding: 5px 0 0 15px;
 	margin-bottom: 1px;
@@ -240,7 +240,7 @@ blockquote {
 	width: 150px;
 	padding: 0 1px 15px 1px;
 	font-size: 1.2em;
-	background: #313131 url('/images/navlround.jpg') no-repeat bottom right;
+	background: #313131 url('/static/images/navlround.jpg') no-repeat bottom right;
 }
 .navmenu li {
 	margin-bottom: 1px;
@@ -252,7 +252,7 @@ blockquote {
 	font-size: 12px;
 	text-decoration: none;
 	color: #CCCCCC;
-	background: url('/images/nli.png') no-repeat left;
+	background: url('/static/images/nli.png') no-repeat left;
 	display: block;
 	height: 20px;
 	line-height: 20px;
@@ -285,7 +285,7 @@ blockquote {
 	margin-top: 5px;
 	padding: 20px 5px 5px 40px;
 	text-align: justify;
-	background: url('/images/curldown.jpg') no-repeat top left;
+	background: url('/static/images/curldown.jpg') no-repeat top left;
 }
 .postfooter {
 	padding-right: 40px; 
@@ -295,7 +295,7 @@ blockquote {
 	/*border-bottom: 1px solid #f2f2f2;*/
 	font-size: 90%;	
 	text-align: right;
-	background: url('/images/curlfoot.jpg') no-repeat bottom right;
+	background: url('/static/images/curlfoot.jpg') no-repeat bottom right;
 }
 .postfooter .readmore {
 	background: url(page.gif) no-repeat left center;
@@ -482,7 +482,7 @@ div.colwrap{
 }
 .footclear{
 	clear: both;
-	background: url('/images/footer.jpg') repeat-x bottom;
+	background: url('/static/images/footer.jpg') repeat-x bottom;
 }
 #footer{
 	clear: both;
