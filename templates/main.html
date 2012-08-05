@@ -25,9 +25,8 @@
     <!-- Menu Start -->
     {% block menu %}
     <ul>
-      <li {% if response.menuitem == 'home' %}class="current"{% endif %}><a href="#">Home</a></li>
-      <li {% if response.menuitem == 'nodes' %}class="current"{% endif %}><a href="#">Nodes</a></li>
       <li {% if response.menuitem == 'status' %}class="current"{% endif %}><a href="#">Status</a></li>
+      <li {% if response.menuitem == 'nodes' %}class="current"{% endif %}><a href="#">Nodes</a></li>
       <li {% if response.menuitem == 'states' %}class="current"{% endif %}><a href="#">States</a></li>
     </ul>
     {% endblock menu %}
