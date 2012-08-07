@@ -3,10 +3,8 @@ from flask import Flask, request, session, g, redirect, url_for, \
              abort, render_template, flash
 
 
-import sys
-sys.path.append('/home/clints/Projects')
 
-from salty_dog.plugins import nodes
+from dog.plugins import nodes
 
 DEBUG = True
 SECRET_KEY = 'devkey'
@@ -23,7 +21,10 @@ resp = {
         'menuitem': 'status',
 }
 
+
+
 @app.route('/')
+@app.route('/status')
 def return_main():
 
     r = nodes._populate()
@@ -31,7 +32,7 @@ def return_main():
 
     return render_template('main.html', response=response)
 
-if __name__ == '__main__':
-    app.run()
+#if __name__ == '__main__':
+#    app.run()
 
 
